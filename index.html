@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link favicon -->
+    <link rel="shortcut icon" href="/icon/watermelon.ico" type="image/x-icon">
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Monoton&display=swap" rel="stylesheet">   
+    <!-- link CSS -->
+    <link rel="stylesheet" href="index.css">
+    <title>วันนี้กินอะไรดีน้าา</title>
+</head>
+<body>
+    <div class="container1">
+        <p class="text">วันนี้ขอเสนออาหารจานเด็ด</p>
+    </div>
+    <div class="container2">
+        <h1 id="menu"></h1>
+        <p>กับ</p>
+        <h1 id="drinks"></h1>
+    </div>
+    <div class="container3">
+        <p id="caption">ทานให้อร่อยน้าเตงงง</p>
+    </div>
+    <button id="btnRandom" onclick="window.location.reload()">สุ่ม</button>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="confetti.js"></script>
+    <script>
+        // BG Color
+        getNewBackground();
+        function getNewBackground(){
+            let color = ['#86a5bd','#bda586','#3224ff','#a561ff','#58a5cc',];
+            let random = color[Math.floor(Math.random()*color.length)];
+            document.body.style.backgroundColor = random;
+        };
+        //Menu Random
+        getNewMenu();
+        function getNewMenu(){
+            let menu = ['ซุปเห็ด','กะเพราหมูกรอบ','สตูเนื้อ','หมูทอดกระเทียม','ราดหน้าทะเล','ผัดไท','หมี่ซั่ว','ผัดซีอิ๊ว','หอยทอด','ชาวเดอร์','ก๋วยเตี๋ยวต้มยำ'
+                        ,'ทาโก้','ข้าวขาหมู','ต้มยำกุ้ง','มาม่า','ยำวุ้นเส้น','ขนมจีน','ชาบู','หมูกะทะ','แกงส้ม','ข้าวหน้าเป็ด','บะหมี่แห้ง','บะหมี่น้ำ','เกี๊ยวน้ำ','ไก่ทอด'];
+            let random = menu[Math.floor(Math.random()*menu.length)];
+            document.getElementById("menu").innerHTML = random;
+        };
+        // Drinks
+        getNewDrinks();
+        function getNewDrinks(){
+            let drinks = ['น้ำส้ม','ชานมไข่มุก','โกโก้','กาแฟ','น้ำเปล่า','ชามะนาว','น้ำโค้ก','น้ำผลไม้รวม','สมูทตี้','ชาดำเย็น','ชานม','น้ำอัญชัญ','ชาไทย','สไปร์ท','เป๊ปซี่'
+                            ,'แฟนต้า','ชามะลิ','ชาเขียว','อิตาเลี่ยนโซดา','นมสดปั่น','นมหมีปั่น','โอริโอ้ปั่น','เหล้า','โซจู'];
+            let random = drinks[Math.floor(Math.random()*drinks.length)];
+            document.getElementById("drinks").innerHTML = random;
+        };
+        //Scroll reveal
+        ScrollReveal().reveal('.text',{origin:'top',distance: '20px',duration: 700});
+        ScrollReveal().reveal('.container2',{scale:0.8, delay: 500,duration:1500});
+        ScrollReveal().reveal('#caption',{origin:'bottom', distance:'10px',duration:1200,delay:1150})
+        // Confetti
+        
+        setTimeout(() =>{startConfetti()},850);
+        setTimeout(() =>{stopConfetti()},3000)
+    </script>
+</body>
+</html>

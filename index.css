@@ -1,0 +1,57 @@
+body{
+    font-family: 'Chakra Petch', sans-serif;
+    margin-top: 80px;
+    background-color: #93b5c2;
+}
+
+canvas{
+    position: absolute;
+    top: 0;
+    width: 99%;
+}
+
+.container1,.container2,.container3{
+    text-align: center;
+    color: white;
+}
+
+.container1{
+    font-size: 40px;
+}
+
+.container2{
+    margin: 20px 0;
+}
+
+.container2 p{
+    font-size: 38px;
+}
+
+.container2 h1{
+    font-size: 110px;
+}
+
+.container3{
+    font-size: 30px;
+}
+
+#btnRandom{
+    font-family: 'Chakra Petch', sans-serif;
+    right: 0;
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    font-size: 36px;
+    margin-right: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+}
+
+#btnRandom:hover{
+    background: white;
+    color: black;
+    transition: 0.25s;
+}
